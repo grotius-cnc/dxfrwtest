@@ -14,6 +14,12 @@ private:
 public:
     ExampleWriter(dxfRW &dxfW);
 
+    //! Cyberdyne add:
+    std::vector<DRW_Line> linevec;
+    std::vector<DRW_Arc> arcvec;
+    std::vector<DRW_Arc> circlevec;
+    
+    //! Original stupid code.
     virtual ~ExampleWriter() override {
 
     }

@@ -7,17 +7,17 @@ ExampleWriter::ExampleWriter(dxfRW &dxfW) : dxfW(dxfW) {
 }
 
 void ExampleWriter::writeEntities() {
-    DRW_Line line;
-    line.basePoint.x = 10;
-    line.basePoint.y = 20;
-    line.secPoint.x = 30;
-    line.secPoint.y = 30;
-    dxfW.writeLine(&line);
 
-    DRW_Line line2;
-    line2.basePoint.x = 0;
-    line2.basePoint.y = 0;
-    line2.secPoint.x = 0;
-    line2.secPoint.y = 30;
-    dxfW.writeLine(&line2);
+    for(unsigned int i=0; i<linevec.size(); i++){
+        dxfW.writeLine(&linevec[i]);
+    }
+
+    //! Example :
+    //!
+    //!    DRW_Line line;
+    //!    line.basePoint.x = 10.20;
+    //!    line.basePoint.y = 20.10;
+    //!    line.secPoint.x = 30.25;
+    //!    line.secPoint.y = 30;
+    //!    dxfW.writeLine(&line);
 }
